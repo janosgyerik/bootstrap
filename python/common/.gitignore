@@ -60,12 +60,8 @@ target/
 # PyCharm
 .idea/
 
-# project
-virtualenv/
-db.sqlite3
-
-# local config
-/settings.py
-
 # misc
 tmp/
+
+# project
+/virtualenv
