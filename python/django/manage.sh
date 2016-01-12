@@ -6,5 +6,5 @@ cd $(dirname "$0")
 if test $# = 0; then
     python manage.py help
 else
-    python manage.py $*
+    python manage.py "$@"
 fi
