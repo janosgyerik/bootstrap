@@ -1,2 +1,3 @@
-# bootstrap
-Create projects in various frameworks quickly and easily
+# Bootstrap
+
+Create minimal projects in various frameworks quickly and easily
