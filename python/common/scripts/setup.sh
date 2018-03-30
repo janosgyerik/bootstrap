@@ -6,4 +6,4 @@ virtualenv=./virtualenv
 test -d $virtualenv || virtualenv --distribute $virtualenv
 
 requirements=requirements.txt
-test -f $requirements && ./pip.sh install -r $requirements
+test -f $requirements && ./pip.sh install -r $requirements || :
