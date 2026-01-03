@@ -15,9 +15,9 @@ import os
 os.environ['LD_LIBRARY_PATH'] = os.path.join(os.environ['HOME'], 'usr', 'local', 'lib')
 
 cwd = os.getcwd()
-virtualenv_root = os.path.join(cwd, 'project', 'virtualenv')
+venv_root = os.path.join(cwd, 'project', 'venv')
 
-INTERP = os.path.join(virtualenv_root, 'bin', 'python')
+INTERP = os.path.join(venv_root, 'bin', 'python')
 if sys.executable != INTERP:
     os.execl(INTERP, INTERP, *sys.argv)
 

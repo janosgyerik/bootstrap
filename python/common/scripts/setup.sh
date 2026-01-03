@@ -1,9 +1,11 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-cd $(dirname "$0")/..
+set -euo pipefail
 
-virtualenv=./virtualenv
-test -d $virtualenv || virtualenv --distribute $virtualenv
+cd "$(dirname "$0")"/..
+
+venv=./venv
+test -d "$venv" || python3 -m venv "$venv"
 
 requirements=requirements.txt
-test -f $requirements && ./pip.sh install -r $requirements || :
+test -f "$requirements" && ./pip.sh install -r "$requirements"

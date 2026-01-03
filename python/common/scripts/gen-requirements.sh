@@ -1,12 +1,21 @@
-#!/bin/sh -e
+#!/usr/bin/env bash
 
-cd $(dirname "$0")/..
+set -euo pipefail
 
 requirements=requirements.txt
 
-cat << EOF > $requirements
-# Install required python packages using pip:
-# pip install -r requirements.txt
-EOF
+{
+    echo '# Install required python packages using pip:'
+    echo '# pip install -r requirements.txt'
+    ./pip.sh freeze
+} | tee "$requirements"
 
-./pip.sh freeze >> $requirements
+print_and_run() {
+    echo
+    echo "+ $*"
+    "$@"
+}
+
+print_and_run git status -sb "$requirements"
+
+print_and_run git diff "$requirements"

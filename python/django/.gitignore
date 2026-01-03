@@ -68,7 +68,7 @@ target/
 tmp/
 
 # project
-/virtualenv
+/venv
 
 # django
 db.sqlite3

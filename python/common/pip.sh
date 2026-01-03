@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-cd $(dirname "$0")
-. ./virtualenv.sh
+set -euo pipefail
 
-pip $*
+cd "$(dirname "$0")"
+. ./venv.sh
+
+pip "$@"

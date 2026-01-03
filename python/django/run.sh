@@ -1,6 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-cd $(dirname "$0")
+set -euo pipefail
+
+cd "$(dirname "$0")"
 
 #./manage.sh runserver "$@" --settings myproj.local_settings
 ./manage.sh runserver "$@"

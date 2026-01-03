@@ -1,7 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-cd $(dirname "$0")
-. ./virtualenv.sh
+set -euo pipefail
+
+cd "$(dirname "$0")"
+. ./venv.sh
 
 if test $# = 0; then
     python manage.py help
